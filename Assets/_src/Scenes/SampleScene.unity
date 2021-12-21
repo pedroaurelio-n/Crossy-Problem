@@ -2591,6 +2591,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3786ae90ad77c0b4ca2fd5663233ddac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDuration: 0.3
+  enableKeyboardMovement: 1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
