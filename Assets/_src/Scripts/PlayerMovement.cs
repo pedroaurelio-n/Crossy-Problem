@@ -8,25 +8,33 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float movementDuration;
     [SerializeField] private float rotationDuration;
     [SerializeField] private bool enableKeyboardMovement;
+    [SerializeField] private Transform obstacleChecker;
+    [SerializeField] private float sphereCheckRadius;
+    [SerializeField] private LayerMask obstacleLayer;
 
     private bool _isMoving;
+
+    private void Start()
+    {
+        obstacleChecker.parent = null;
+    }
 
     private void Update()
     {
         if (enableKeyboardMovement)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
-                Move("forward");
+                CheckMove("forward");
             else if (Input.GetKeyDown(KeyCode.DownArrow))
-                Move("back");
+                CheckMove("back");
             else if (Input.GetKeyDown(KeyCode.RightArrow))
-                Move("right");
+                CheckMove("right");
             else if (Input.GetKeyDown(KeyCode.LeftArrow))
-                Move("left");
+                CheckMove("left");
         }
     }
 
-    private void Move(string direction)
+    private void CheckMove(string direction)
     {
         if (_isMoving)
             return;
@@ -63,6 +71,18 @@ public class PlayerMovement : MonoBehaviour
                 break;
         }
 
+        transform.DORotate(rotationDirection, rotationDuration);
+
+        obstacleChecker.position += moveDirection;
+
+        var isOverlapingObstacle = Physics.OverlapSphere(obstacleChecker.position, sphereCheckRadius, obstacleLayer).Length != 0;
+
+        if (isOverlapingObstacle)
+        {
+            obstacleChecker.position = transform.position;
+            return;
+        }
+
         MoveTween(moveDirection, rotationDirection);
     }
 
@@ -76,19 +96,19 @@ public class PlayerMovement : MonoBehaviour
 
         var finalPosition = transform.position + moveDirection + new Vector3(adjustToWhole, 0, 0);
         
-        transform.DORotate(rotationDirection, rotationDuration);
         transform.DOMove(finalPosition, movementDuration).OnComplete(delegate {
+            obstacleChecker.position = transform.position;
             _isMoving = false;
         });
     }
 
     private void OnEnable()
     {
-        ControllerLogic.OnMovementMessage += Move;
+        ControllerLogic.OnMovementMessage += CheckMove;
     }
 
     private void OnDisable()
     {
-        ControllerLogic.OnMovementMessage -= Move;
+        ControllerLogic.OnMovementMessage -= CheckMove;
     }
 }
