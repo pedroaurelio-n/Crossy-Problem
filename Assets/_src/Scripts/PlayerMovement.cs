@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
         switch (direction)
         {
             case "forward":
-                var finalPosition = 
                 transform.position += Vector3.forward;
                 break;
 
