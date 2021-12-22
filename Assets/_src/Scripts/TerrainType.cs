@@ -5,5 +5,7 @@ using System.Collections.Generic;
 public class TerrainType : ScriptableObject
 {
     public List<GameObject> PossibleTerrainPrefabs;
-    public int GenerationCount;
+    public bool isRandom;
+    [Range(1, 5)] public int MinimumTerrainsToSpawn;
+    [Range(1, 5)] public int MaximumTerrainsToSpawn;
 }

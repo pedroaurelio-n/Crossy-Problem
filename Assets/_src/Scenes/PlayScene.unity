@@ -313,7 +313,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3
+  orthographic size: 3.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -336,8 +336,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.3270967, y: -0.2657444, z: 0.09639836, w: 0.90171784}
-  m_LocalPosition: {x: 4.85, y: 9.65, z: -7.08}
+  m_LocalRotation: {x: 0.44751954, y: -0.14985324, z: 0.07635315, w: 0.8783168}
+  m_LocalPosition: {x: 2.65, y: 15.48, z: -7.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1054815232}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 3
+    OrthographicSize: 3.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -488,8 +488,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756241881}
-  m_LocalRotation: {x: 0.3270967, y: -0.2657444, z: 0.09639836, w: 0.90171784}
-  m_LocalPosition: {x: 4.85, y: 9.65, z: -7.08}
+  m_LocalRotation: {x: 0.44751954, y: -0.14985324, z: 0.07635315, w: 0.8783168}
+  m_LocalPosition: {x: 2.65, y: 15.48, z: -7.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1926869446}
@@ -543,8 +543,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 26c330f56c6e3dc42bdc3602a4aa6be3, type: 2}
   standardTerrainTypes:
   - {fileID: 11400000, guid: fce6560dcc38e29499c5e24ca59eca05, type: 2}
-  extraTerrainToSpawn: 2
-  maxTerrainPrefabsOnScene: 3
+  - {fileID: 11400000, guid: 8fe32421c5cba594cb2ab0f3381e8b8b, type: 2}
+  terrainToSpawnOnStart: 6
+  maxTerrainPrefabsOnStart: 25
+  spawnTerrainTrigger: {fileID: 5130865203870625031, guid: e074e66b5d358b547b558671271b4201, type: 3}
+  triggerSpawnPositionOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1926869445
 GameObject:
   m_ObjectHideFlags: 3
@@ -590,7 +593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 4
-  m_FollowOffset: {x: 4.85, y: 8.65, z: -7.08}
+  m_FollowOffset: {x: 2.65, y: 14.48, z: -7.54}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -621,14 +624,6 @@ PrefabInstance:
     - target: {fileID: 5571448681545481426, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571448681545481429, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}
-      propertyPath: m_Height
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571448681545481429, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}
-      propertyPath: m_Radius
-      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 5571448681545481430, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}
       propertyPath: m_RootOrder
@@ -673,14 +668,6 @@ PrefabInstance:
     - target: {fileID: 5571448681545481430, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571448681545481433, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}
-      propertyPath: movementDuration
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571448681545481433, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}
-      propertyPath: rotationDuration
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2ba274017c74ce4c9390ccedf67fe34, type: 3}

@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: StartAreas
   m_EditorClassIdentifier: 
   PossibleTerrainPrefabs:
-  - {fileID: 1118913764150405887, guid: 40e970073f7d97a4fb4a32c4e80bcf7d, type: 3}
-  GenerationCount: 0
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  isRandom: 0
+  MinimumTerrainsToSpawn: 1
+  MaximumTerrainsToSpawn: 1
