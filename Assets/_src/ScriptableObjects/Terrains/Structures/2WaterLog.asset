@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c995892771c67e40aadf873426f7237, type: 3}
+  m_Name: 2WaterLog
+  m_EditorClassIdentifier: 
+  PossibleTerrainPrefabs:
+  - {fileID: 6096798123880428412, guid: 518d25706b099dd448a7f61f399ca71b, type: 3}
+  - {fileID: 6096798123880428412, guid: 94286f824ff36df4b85f42d9bdda469c, type: 3}
+  AllowRepetition: 0
+  isRandom: 0
+  MinimumTerrainsToSpawn: 0
+  MaximumTerrainsToSpawn: 0

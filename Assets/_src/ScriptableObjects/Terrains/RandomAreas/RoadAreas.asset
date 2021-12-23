@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c995892771c67e40aadf873426f7237, type: 3}
+  m_Name: RoadAreas
+  m_EditorClassIdentifier: 
+  PossibleTerrainPrefabs:
+  - {fileID: 6096798123880428412, guid: 503953590617ccd4d9b5b650e73ffa26, type: 3}
+  - {fileID: 6096798123880428412, guid: d6eaa506e1f48094598481b7ca7a505f, type: 3}
+  - {fileID: 6096798123880428412, guid: f45352c34ab075c4aa4c457638df3bda, type: 3}
+  - {fileID: 6096798123880428412, guid: a88b36a1c7ab33743b67fcb9c530a7d1, type: 3}
+  - {fileID: 6096798123880428412, guid: 0aafbd8397410bb4ea2dd8a881a9b9ce, type: 3}
+  - {fileID: 6096798123880428412, guid: a36ee7dc2aa0d444b9b51cb34a89caae, type: 3}
+  AllowRepetition: 1
+  isRandom: 1
+  MinimumTerrainsToSpawn: 1
+  MaximumTerrainsToSpawn: 4

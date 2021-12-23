@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c995892771c67e40aadf873426f7237, type: 3}
+  m_Name: StartArea
+  m_EditorClassIdentifier: 
+  PossibleTerrainPrefabs:
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: d0c2c05098c9cf941add88816b1dd8ec, type: 3}
+  - {fileID: 1775620607210791716, guid: 29b5d96c63e03e34c8876e69e8bcb200, type: 3}
+  - {fileID: 1775620607210791716, guid: db562909e3cc7e54c890a0f88beefee5, type: 3}
+  AllowRepetition: 0
+  isRandom: 0
+  MinimumTerrainsToSpawn: 1
+  MaximumTerrainsToSpawn: 1
