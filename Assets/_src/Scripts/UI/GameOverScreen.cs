@@ -27,7 +27,7 @@ public class GameOverScreen : MonoBehaviour
 
     private void TriggerGameOver()
     {
-        if (AirConsole.instance.IsAirConsoleUnityPluginReady())
+        if (AirConsole.instance != null && AirConsole.instance.IsAirConsoleUnityPluginReady())
             logic.SetView("GameOver");
         else
             StartCoroutine(ResetLevelCoroutine());
@@ -46,7 +46,7 @@ public class GameOverScreen : MonoBehaviour
 
     public void ResetLevel()
     {
-        if (AirConsole.instance.IsAirConsoleUnityPluginReady())
+        if (AirConsole.instance != null && AirConsole.instance.IsAirConsoleUnityPluginReady())
             logic.SetView("InGame");
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
