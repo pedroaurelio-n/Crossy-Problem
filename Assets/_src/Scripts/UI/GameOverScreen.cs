@@ -18,13 +18,25 @@ public class GameOverScreen : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private GameObject gameOverPanelVertical;
     [SerializeField] private GameObject gameOverPanelHorizontal;
-    [SerializeField] private TMP_Text scoreTxt;
-    [SerializeField] private TMP_Text highScoreTxt;
+    private TMP_Text _scoreTxt;
+    private TMP_Text _highScoreTxt;
 
     private void Start()
     {
         gameOverPanelVertical.SetActive(false);
         gameOverPanelHorizontal.SetActive(false);
+
+        if (Screen.height > Screen.width)
+        {
+            _scoreTxt = gameOverPanelVertical.transform.Find("ScoreNumber").GetComponent<TMP_Text>();
+            _highScoreTxt = gameOverPanelVertical.transform.Find("HighscoreNumber").GetComponent<TMP_Text>();
+        }
+
+        else
+        {
+            _scoreTxt = gameOverPanelHorizontal.transform.Find("ScoreNumber").GetComponent<TMP_Text>();
+            _highScoreTxt = gameOverPanelHorizontal.transform.Find("HighscoreNumber").GetComponent<TMP_Text>();
+        }
     }
 
     private void TriggerGameOver()
@@ -34,8 +46,8 @@ public class GameOverScreen : MonoBehaviour
         else
             StartCoroutine(ResetLevelCoroutine());
             
-        scoreTxt.text = highScoreData.CurrentScore.ToString();
-        highScoreTxt.text = highScoreData.HighScore.ToString();
+        _scoreTxt.text = highScoreData.CurrentScore.ToString();
+        _highScoreTxt.text = highScoreData.HighScore.ToString();
 
         if (Screen.height > Screen.width)
             gameOverPanelVertical.SetActive(true);
