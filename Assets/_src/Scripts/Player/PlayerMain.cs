@@ -34,13 +34,13 @@ public class PlayerMain : MonoBehaviour
             transform.parent = null;
 
             animator.SetTrigger("Death");
-            PlayerMovement.SetMovementBool(false);
 
             capsuleCollider.enabled = false;
             rigidBody.useGravity = false;
             rigidBody.velocity = Vector3.zero;
             transform.position += deathOffset;
 
+            PlayerMovement.SetMovementBool(false);
 
             if (OnPlayerDeath != null)
                 OnPlayerDeath();
@@ -49,6 +49,7 @@ public class PlayerMain : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        PlayerMovement.SetMovementBool(true);
+        if (!_isDead)
+            PlayerMovement.SetMovementBool(true);
     }
 }
