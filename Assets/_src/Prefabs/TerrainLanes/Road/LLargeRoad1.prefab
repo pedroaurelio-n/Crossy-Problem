@@ -1590,9 +1590,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabList:
   - {fileID: 1593700771054174981, guid: ce255bbf6938acf4faf8116c4d2e7fe0, type: 3}
-  - {fileID: 1593700771054174981, guid: b854f57564cebd345b0cd76f9998d4cc, type: 3}
-  - {fileID: 1593700771054174981, guid: 73063e02f66a8124c8ea6c5aa186a448, type: 3}
-  - {fileID: 1593700771054174981, guid: 267fd682a28141242b6f4a650214ef52, type: 3}
+  - {fileID: 6759035593755474452, guid: 0623a48a03ae19e4e9d027afff1eb6c8, type: 3}
+  - {fileID: 6759035593755474452, guid: 639bb0b9e6eb8ad488147cbf471ff1d7, type: 3}
+  - {fileID: 6759035593755474452, guid: ed5bc6ca39b15314993f5fe29bf0d16d, type: 3}
   startPoint: {fileID: 7142626422347228401}
   endPoint: {fileID: 4353525828979411772}
   duration: 15
