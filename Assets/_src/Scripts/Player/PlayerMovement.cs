@@ -131,14 +131,4 @@ public class PlayerMovement : MonoBehaviour
     {
         _isOnSupport = value;
     }
-
-    private void OnEnable()
-    {
-        AirConsoleLogic.OnMovementMessage += CheckMove;
-    }
-
-    private void OnDisable()
-    {
-        AirConsoleLogic.OnMovementMessage -= CheckMove;
-    }
 }
