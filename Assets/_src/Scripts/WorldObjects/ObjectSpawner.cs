@@ -33,7 +33,7 @@ public class ObjectSpawner : MonoBehaviour
         while (true)
         {
             var randomInt = Random.Range(0, prefabList.Count);
-            var tempObject = Instantiate(prefabList[randomInt], startPoint.position, Quaternion.identity, transform);
+            var tempObject = Instantiate(prefabList[randomInt], startPoint.position, startPoint.rotation, transform);
 
             tempObject.transform.DOMoveX(endPoint.position.x, duration).SetEase(ease).OnComplete(delegate { Destroy(tempObject); });
 
