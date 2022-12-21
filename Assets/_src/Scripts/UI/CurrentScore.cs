@@ -6,19 +6,19 @@ using TMPro;
 
 public class CurrentScore : MonoBehaviour
 {
-    [Header("HighScoreData Reference")]
-    [SerializeField] private HighScoreData highScoreData;
+    [Header("GameData Reference")]
+    [SerializeField] private GameData gameData;
 
     [Header("UI References")]
-    [SerializeField] private TMP_Text scoreTxt;
-    [SerializeField] private TMP_Text highScoreTxt;
+    [SerializeField] private TextMeshProUGUI scoreTxt;
+    [SerializeField] private TextMeshProUGUI highScoreTxt;
     
     private int _currentScore;
 
     private void Start()
     {
         _currentScore = 0;
-        highScoreData.UpdateScoreValues(_currentScore);
+        gameData.UpdateScoreValues(_currentScore);
 
         UpdateHud();
     }
@@ -27,14 +27,14 @@ public class CurrentScore : MonoBehaviour
     {
         _currentScore++;
 
-        highScoreData.UpdateScoreValues(_currentScore);
+        gameData.UpdateScoreValues(_currentScore);
         UpdateHud();
     }
     
     private void UpdateHud()
     {
-        scoreTxt.text = highScoreData.CurrentScore.ToString();
-        highScoreTxt.text = highScoreData.HighScore.ToString();
+        scoreTxt.text = gameData.CurrentScore.ToString();
+        highScoreTxt.text = gameData.HighScore.ToString();
     }
 
     private void OnEnable()

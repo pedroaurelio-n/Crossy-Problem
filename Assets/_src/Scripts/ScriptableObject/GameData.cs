@@ -1,8 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HighScoreData", menuName = "High Score Data")]
-public class HighScoreData : ScriptableObject
+[CreateAssetMenu(fileName = "Game Data", menuName = "High Score Data")]
+public class GameData : ScriptableObject
 {
+    public bool StartGame;
     public int HighScore;
     public int CurrentScore;
 
