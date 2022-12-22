@@ -3,6 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+public enum PlayerMoveDirection
+{
+    UP,
+    RIGHT,
+    DOWN,
+    LEFT
+}
+
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Script References")]
@@ -11,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement Configs")]
     [SerializeField] private float movementDuration;
     [SerializeField] private float rotationDuration;
-    [SerializeField] private bool enableKeyboardMovement;
     [SerializeField] private Vector3 moveOffset;
 
     [Header("Obstacle Configs")]
@@ -33,18 +40,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_isOnSupport)
             obstacleChecker.position = transform.position;
-
-        if (enableKeyboardMovement)
-        {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-                CheckMove("forward");
-            else if (Input.GetKeyDown(KeyCode.DownArrow))
-                CheckMove("back");
-            else if (Input.GetKeyDown(KeyCode.RightArrow))
-                CheckMove("right");
-            else if (Input.GetKeyDown(KeyCode.LeftArrow))
-                CheckMove("left");
-        }
     }
 
     public void SetMovementBool(bool value)
@@ -52,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
         _canMove = value;
     }
 
-    private void CheckMove(string direction)
+    public void CheckMove(PlayerMoveDirection direction)
     {
         if (_isMoving || !_canMove)
             return;
@@ -62,22 +57,22 @@ public class PlayerMovement : MonoBehaviour
 
         switch (direction)
         {
-            case "forward":
+            case PlayerMoveDirection.UP:
                 moveDirection = Vector3.forward;
                 rotationDirection = new Vector3(0, 0, 0);
                 break;
 
-            case "back":
+            case PlayerMoveDirection.DOWN:
                 moveDirection = Vector3.back;
                 rotationDirection = new Vector3(0, 180, 0);
                 break;
 
-            case "right":
+            case PlayerMoveDirection.RIGHT:
                 moveDirection = Vector3.right;
                 rotationDirection = new Vector3(0, 90, 0);
                 break;
 
-            case "left":
+            case PlayerMoveDirection.LEFT:
                 moveDirection = Vector3.left;
                 rotationDirection = new Vector3(0, 270, 0);
                 break;

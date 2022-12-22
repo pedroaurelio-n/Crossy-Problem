@@ -120,6 +120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5571448681545481430}
+  - component: {fileID: 2412207334964092813}
   - component: {fileID: 5736759314512945441}
   - component: {fileID: 5571448681545481433}
   - component: {fileID: 5571448681545481429}
@@ -148,6 +149,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2412207334964092813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5571448681545481426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d0b67402ab5ff54fbc3ca6f15899682, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minSweepSpeed: 1000
+  sweepDelay: 0.125
 --- !u!114 &5736759314512945441
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,7 +195,6 @@ MonoBehaviour:
   playerMain: {fileID: 5736759314512945441}
   movementDuration: 0.13
   rotationDuration: 0.12
-  enableKeyboardMovement: 1
   moveOffset: {x: 0, y: 0.05, z: 0}
   obstacleChecker: {fileID: 755283958}
   sphereCheckRadius: 0.4
