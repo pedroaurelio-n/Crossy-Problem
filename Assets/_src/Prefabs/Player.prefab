@@ -210,8 +210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d0b67402ab5ff54fbc3ca6f15899682, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minSweepSpeed: 1000
-  sweepDelay: 0.125
+  minSwipeSpeed: 1000
+  swipeDelay: 0.125
 --- !u!114 &5736759314512945441
 MonoBehaviour:
   m_ObjectHideFlags: 0

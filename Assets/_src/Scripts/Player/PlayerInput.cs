@@ -6,16 +6,16 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     [Header("Settings")]
-    [SerializeField] private float minSweepSpeed;
-    [SerializeField] private float sweepDelay;
+    [SerializeField] private float minSwipeSpeed;
+    [SerializeField] private float swipeDelay;
     
     private PlayerMovement _movement;
-    private float _sweepTimer;
+    private float _swipeTimer;
 
     private void Awake()
     {
         _movement = GetComponent<PlayerMovement>();
-        _sweepTimer = 0f;
+        _swipeTimer = 0f;
     }
 
     private void Update()
@@ -31,9 +31,9 @@ public class PlayerInput : MonoBehaviour
             _movement.CheckMove(PlayerMoveDirection.LEFT);
         #endif
 
-        if (_sweepTimer > 0f)
+        if (_swipeTimer > 0f)
         {
-            _sweepTimer -= Time.deltaTime;
+            _swipeTimer -= Time.deltaTime;
             return;
         }
 
@@ -46,15 +46,15 @@ public class PlayerInput : MonoBehaviour
             return;
 
         var touch = Input.touches[0];
-        var sweepSpeed = touch.deltaPosition.magnitude / touch.deltaTime;
+        var swipeSpeed = touch.deltaPosition.magnitude / Time.deltaTime;
 
-        if (sweepSpeed <= minSweepSpeed)
+        if (swipeSpeed <= minSwipeSpeed)
             return;
 
-        CheckSweepDirection(touch.deltaPosition);
+        CheckswipeDirection(touch.deltaPosition);
     }
 
-    private void CheckSweepDirection(Vector2 deltaPosition)
+    private void CheckswipeDirection(Vector2 deltaPosition)
     {
         PlayerMoveDirection moveDirection;
 
@@ -65,6 +65,6 @@ public class PlayerInput : MonoBehaviour
 
         _movement.CheckMove(moveDirection);
 
-        _sweepTimer = sweepDelay;
+        _swipeTimer = swipeDelay;
     }
 }
