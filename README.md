@@ -1,7 +1,15 @@
-# Crossy Road (Clone)
+# Crossy Problem
 
-## Play it here: https://play.unity.com/mg/other/crossy-road-clone
+Crossy Problem is a Crossy Road clone (3D infinite runner game) for android devices and web applications where you control a person trying to proceed forward on the level while avoid cars and crossing rivers. The farther the player reach, higher the score. The main objective is trying to get the highest score possible. The game level is composed by chunks that are randomly chosen during gameplay to be part of the level.
 
-Originally this was a job test that I had to do in 1 week. Didn't get hired but I thought this turned out pretty good.
+Main gameplay code was originally made in 7 days back in December 2021 as an coding test for a Unity Developer job.
 
-It uses procedural level generation based on terrain scriptable objects that contain prefab tiles. Tiles are hand-made according to the default template and can be placed inside the scriptable objects. Each object has some number of tile prefabs and can be generated randomly within also random intervals from 2-5 tiles, or can be generated sequentially according to placement order.
+- Audio and 3D models from Kenney: https://kenney.nl/
+
+### Links
+
+- [APK download link](https://drive.google.com/file/d/10ownxIboY7PyyvqyyzAoStJNWJ0TUyII/view?usp=share_link)
+
+- [Play it on itch.io](https://pedroaurelio-n.itch.io/crossy-problem)
+
+![Gameplay](https://user-images.githubusercontent.com/69462126/209229827-a8100a18-cd5b-41b3-923c-8bdf0a985c8d.gif)
