@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using PedroAurelio.AudioSystem;
 
 public enum PlayerMoveDirection
 {
@@ -25,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform obstacleChecker;
     [SerializeField] private float sphereCheckRadius;
     [SerializeField] private LayerMask obstacleLayer;
+
+    [Header("Audios")]
+    [SerializeField] private PlayAudioEvent moveAudio;
+    [SerializeField] private PlayAudioEvent blockAudio;
 
     private bool _canMove;
     private bool _isMoving;
@@ -94,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         {
             obstacleChecker.position = transform.position;
             playerMain.SetAnimationTrigger("Fail");
+            blockAudio.PlayAudio();
             return;
         }
 
@@ -107,6 +113,7 @@ public class PlayerMovement : MonoBehaviour
         _isMoving = true;
 
         playerMain.SetAnimationTrigger("Hop");
+        moveAudio.PlayAudio();
 
         var adjustToWhole = 0f;
 

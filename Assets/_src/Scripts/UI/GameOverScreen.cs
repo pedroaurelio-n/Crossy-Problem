@@ -11,38 +11,21 @@ public class GameOverScreen : MonoBehaviour
     [SerializeField] private GameData gameData;
 
     [Header("UI References")]
-    [SerializeField] private GameObject gameOverPanelVertical;
-    [SerializeField] private GameObject gameOverPanelHorizontal;
-    private TextMeshProUGUI _scoreTxt;
-    private TextMeshProUGUI _highScoreTxt;
+    [SerializeField] private GameObject gameOverPanel;
+    [SerializeField] private TextMeshProUGUI scoreTxt;
+    [SerializeField] private TextMeshProUGUI highScoreTxt;
 
     private void Start()
     {
-        if (Screen.height > Screen.width)
-        {
-            _scoreTxt = gameOverPanelVertical.transform.Find("ScoreNumber").GetComponent<TextMeshProUGUI>();
-            _highScoreTxt = gameOverPanelVertical.transform.Find("HighScoreNumber").GetComponent<TextMeshProUGUI>();
-        }
-
-        else
-        {
-            _scoreTxt = gameOverPanelHorizontal.transform.Find("ScoreNumber").GetComponent<TextMeshProUGUI>();
-            _highScoreTxt = gameOverPanelHorizontal.transform.Find("HighScoreNumber").GetComponent<TextMeshProUGUI>();
-        }
-
-        gameOverPanelVertical.SetActive(false);
-        gameOverPanelHorizontal.SetActive(false);
+        gameOverPanel.SetActive(false);
     }
 
     private void TriggerGameOver()
     {            
-        _scoreTxt.text = gameData.CurrentScore.ToString();
-        _highScoreTxt.text = gameData.HighScore.ToString();
+        scoreTxt.text = gameData.CurrentScore.ToString();
+        highScoreTxt.text = gameData.HighScore.ToString();
 
-        if (Screen.height > Screen.width)
-            gameOverPanelVertical.SetActive(true);
-        else
-            gameOverPanelHorizontal.SetActive(true);
+        gameOverPanel.SetActive(true);
     }
 
     private void OnEnable()

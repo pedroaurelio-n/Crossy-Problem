@@ -64,7 +64,6 @@ public class PlayerInput : MonoBehaviour
             moveDirection = deltaPosition.y > 0f ? PlayerMoveDirection.UP : PlayerMoveDirection.DOWN;
 
         _movement.CheckMove(moveDirection);
-        Debug.Log(deltaPosition);
 
         _sweepTimer = sweepDelay;
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PedroAurelio.AudioSystem;
 
 public class PlayerMain : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class PlayerMain : MonoBehaviour
 
     [Header("Death Config")]
     [SerializeField] private Vector3 deathOffset;
+    [SerializeField] private PlayAudioEvent deathAudio;
 
     private bool _isDead = false;
 
@@ -33,7 +35,8 @@ public class PlayerMain : MonoBehaviour
 
             transform.parent = null;
 
-            animator.SetTrigger("Death");
+            SetAnimationTrigger("Death");
+            deathAudio.PlayAudio();
 
             capsuleCollider.enabled = false;
             rigidBody.useGravity = false;
