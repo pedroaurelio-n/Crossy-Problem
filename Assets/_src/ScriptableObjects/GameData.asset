@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: GameData
   m_EditorClassIdentifier: 
   StartGame: 0
-  HighScore: 0
   CurrentScore: 0

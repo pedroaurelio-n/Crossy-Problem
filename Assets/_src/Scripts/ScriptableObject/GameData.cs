@@ -4,14 +4,18 @@ using UnityEngine;
 public class GameData : ScriptableObject
 {
     public bool StartGame;
-    public int HighScore;
     public int CurrentScore;
+
+    public int GetHighScore()
+    {
+        return PlayerPrefs.GetInt("HighScore", 0);
+    }
 
     public void UpdateScoreValues(int score)
     {
         CurrentScore = score;
 
-        if (CurrentScore > HighScore)
-            HighScore = score;
+        if (CurrentScore > GetHighScore())
+            PlayerPrefs.SetInt("HighScore", score);
     }
 }

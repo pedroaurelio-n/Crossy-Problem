@@ -23,7 +23,7 @@ public class GameOverScreen : MonoBehaviour
     private void TriggerGameOver()
     {            
         scoreTxt.text = gameData.CurrentScore.ToString();
-        highScoreTxt.text = gameData.HighScore.ToString();
+        highScoreTxt.text = gameData.GetHighScore().ToString();
 
         gameOverPanel.SetActive(true);
     }

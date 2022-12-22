@@ -22,6 +22,6 @@ public class MainMenu : MonoBehaviour
 
     private void UpdateHighScore()
     {
-        highscoreTxt.text = gameData.HighScore.ToString();
+        highscoreTxt.text = gameData.GetHighScore().ToString();
     }
 }

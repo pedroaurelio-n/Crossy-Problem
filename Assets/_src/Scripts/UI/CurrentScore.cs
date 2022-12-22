@@ -34,7 +34,7 @@ public class CurrentScore : MonoBehaviour
     private void UpdateHud()
     {
         scoreTxt.text = gameData.CurrentScore.ToString();
-        highScoreTxt.text = gameData.HighScore.ToString();
+        highScoreTxt.text = gameData.GetHighScore().ToString();
     }
 
     private void OnEnable()
